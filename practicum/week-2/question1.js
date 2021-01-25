@@ -6,5 +6,17 @@ For example given the input array [5, 6, 1], the running sum is
 */
 
 var runningSum = function(input) {
-   
+    var retval = [];
+
+    // Place the first value to the array.
+    if (input.length > 0) {
+        retval.push(input[0]); 
+    }
+
+    // Place each consecutive sums in the array.
+    for(var i = 0; i < input.length - 1; i++) {
+        retval.push(retval[0] + "+" + input[i+1])
+   }
+
+   return retval
 };
