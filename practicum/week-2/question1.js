@@ -15,7 +15,7 @@ var runningSum = function(input) {
 
     // Place each consecutive sums in the array.
     for(var i = 0; i < input.length - 1; i++) {
-        retval.push(retval[0] + "+" + input[i+1])
+        retval.push(retval[i] + input[i+1])
    }
 
    return retval
