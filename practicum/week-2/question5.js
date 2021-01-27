@@ -13,5 +13,31 @@ output: 3
 
 var minimalReduction = function(n) {
 
+    return helper(0,n,n);
 };
+
+function helper(curSteps, fewestSteps, number) {
+
+    // Prune step.
+    if(curSteps >= fewestSteps || number < 0) {
+        return fewestSteps;
+    }
+    
+    // Base case
+    if(number==0) {
+        if(curSteps < fewestSteps) {
+            fewestSteps = curSteps;
+        }
+        return fewestSteps;
+    }
+
+    // Recursive cases
+    fewestSteps = helper(curSteps + 1, fewestSteps,number / 3);
+    fewestSteps = helper(curSteps + 1, fewestSteps,number / 4);
+    fewestSteps = helper(curSteps + 1, fewestSteps,number - 1);
+
+    return fewestSteps;
+}
+
+console.log(minimalReduction(15));
 
