@@ -38,6 +38,3 @@ function helper(curSteps, fewestSteps, number) {
 
     return fewestSteps;
 }
-
-console.log(minimalReduction(15));
-
