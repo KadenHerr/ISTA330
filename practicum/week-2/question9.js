@@ -14,7 +14,7 @@ var suffleString = function(input, shuffleIndices) {
     let strArr = input.split("");
 
     for(var i = 0; i < shuffleIndices.length; i++) {
-        retVal += strArr[input[i]];
+        retVal += strArr[shuffleIndices[i]];
     }
 
     return retVal;
