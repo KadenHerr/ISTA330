@@ -10,7 +10,7 @@ output: 7 - 2 = 5
 var maxMinusMin = function(n) {
 
     inputStr = "" + n;
-    let intArr = inputStr.spit("");
+    let intArr = inputStr.split("");
 
     // Sort in assending order
     intArr.sort(function(a,b){return a - b});
