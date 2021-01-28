@@ -10,4 +10,12 @@ output: 'hello'
 
 var suffleString = function(input, shuffleIndices) {
 
+    let retVal = "";
+    let strArr = input.split("");
+
+    for(var i = 0; i < shuffleIndices.length; i++) {
+        retVal += strArr[input[i]];
+    }
+
+    return retVal;
 };
