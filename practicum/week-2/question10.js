@@ -9,4 +9,11 @@ output: 7 - 2 = 5
 
 var maxMinusMin = function(n) {
 
+    inputStr = "" + n;
+    let intArr = inputStr.spit("");
+
+    // Sort in assending order
+    intArr.sort(function(a,b){return a - b});
+
+    return intArr[intArr.length - 1] - intArr[0];
 };
