@@ -17,7 +17,20 @@ output: true
 */
 
 var isMonotonic = function(input) {
+    let isIncreasing = true;
+    let isDecreasing = true;
+    // Base case
+    if(input.lenght <= 1) {
+        return true;
+    }
 
+    for(let i=1; i<input.length; i++) {
+        if(input[i-1] > input[i]) {
+            isIncreasing = false;
+        }
+        if(input[i-1] < input[i]) {
+            isDecreasing = false;
+        }
+    }
+    return (isIncreasing || isDecreasing);
 };
-
-console.log('hi');
