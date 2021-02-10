@@ -13,5 +13,31 @@ output: 3
 */
 
 var d_integer = function(input) {
+    let highest = -1;
+    let count = 0;
+    let previous = [];
 
+    for(let i=0; i<input.length; i++) {
+        // Check that you are not search for previous searched values.
+        if(previous.includes(input[i])) {
+            continue;
+        } else {
+            previous.push(input[i]);
+        }
+        
+        // Count how many times the array contains a duplicate of the i-th element.
+        for(let j=i; j<input.length; j++) {
+            if(input[i] == input[j]) {
+                count++;
+            }
+        }
+        // Check if the i-th element matches its count.
+        if(count == input[i]) {
+            if(count > highest) {
+                highest = count;
+            }
+        }
+        count = 0;
+    }
+    return highest;
 };
