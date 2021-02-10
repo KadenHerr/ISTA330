@@ -13,5 +13,28 @@ output: [
 */
 
 var PascalTriangle = function(n) {
-
+    let retVal = [1];  
+    // Base cases
+    if(n == 1) {
+      return [1];
+    }
+    if(n == 2) {
+      return [1,1];
+    }
+    return buildTriangle(n-2,[1,1]);
 };
+// Helper function
+function buildTriangle(n,arr) {
+    // Base cases
+    if(n <= 0) {
+      return arr;
+    }
+    let retVal = [1];
+
+    // Recursive case
+    for(i=1; i<arr.length; i++) {
+      retVal.push(arr[i]+arr[i-1]);
+    }
+    retVal.push(1);
+    return buildTriangle(n-1,retVal);
+}
