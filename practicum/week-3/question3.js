@@ -33,5 +33,7 @@ function buildTriangle(n,arr,fullTri) {
       retVal.push(arr[i]+arr[i-1]);
     }
     retVal.push(1);
-    return buildTriangle(n-1,retVal,fullTri.push(retVal));
+    fullTri.push(retVal);
+    return buildTriangle(n-1,retVal,fullTri);
 }
+console.log(PascalTriangle(4));
