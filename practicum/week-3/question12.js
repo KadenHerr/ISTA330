@@ -9,5 +9,16 @@ Given n, calculate F(n).
 */
 
 var F = function(n) {
+    let fib = [1,1];
 
+    // Base cases
+    if(n==1 || n==2) {
+        return 1;
+    }
+    // Retursive case
+    for(let i=2; i<n; i++) {
+        fib[i] = fib[i-1] + fib[i-2];
+    }
+
+    return fib[n-1];
 };
