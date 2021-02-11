@@ -15,7 +15,7 @@ var F = function(n) {
     if(n==1 || n==2) {
         return 1;
     }
-    // Retursive case
+    // Recursive case
     for(let i=2; i<n; i++) {
         fib[i] = fib[i-1] + fib[i-2];
     }
