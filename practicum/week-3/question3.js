@@ -18,10 +18,7 @@ var PascalTriangle = function(n) {
     if(n == 1) {
       return [1];
     }
-    if(n == 2) {
-      return [1,1];
-    }
-    return buildTriangle(n-2,[1,1],[1,1,1]);
+    return buildTriangle(n-2,[1,1],[[1],[1,1]]);
 };
 // Helper function
 function buildTriangle(n,arr,fullTri) {
@@ -36,5 +33,5 @@ function buildTriangle(n,arr,fullTri) {
       retVal.push(arr[i]+arr[i-1]);
     }
     retVal.push(1);
-    return buildTriangle(n-1,retVal,fullTri.concat(retVal));
+    return buildTriangle(n-1,retVal,fullTri.push(retVal));
 }
