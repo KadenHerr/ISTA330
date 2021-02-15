@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Author: Kaden Herr -->
 <html lang="en">
 
 <head>
@@ -83,8 +84,8 @@
         }
         let daffodil = new Flower('Daffodil', 'daffodil.png');
         let cherryblossom = new Flower('Cherry blossom', 'cherryblossom.png');
-        let lily = new Flower('Lily', 'lily.png');
-        let daisy = new Flower('Daisy', 'daisy.png');
+        let lily = new Flower('Lily', 'lily.jpg');
+        let daisy = new Flower('Daisy', 'daisy.jpg');
         let sunflower = new Flower('Sunflower', 'sunflower.png');
         let tulip = new Flower('Tulip', 'tulip.png');
         let rose = new Flower('Rose', 'rose.png');
@@ -100,6 +101,81 @@
             rose,
             waterlily
         ];
+
+        // Display the flowers
+        printFlowers(flowers);
+
+        /*
+        * Change the order of the flowers and display the new order.
+        */
+        function rearrange(item) {
+            let name = item.target.id;
+            let newFlwrArray = [];
+            let i = 0;
+
+            // Sort the flowers array
+            flowers.sort((a,b) => sortAlgor(a,b));
+
+            // Find the index of the clicked on flower.
+            for(i=0; i<8;i++) {
+                if(name == flowers[i].name) {
+                    break;
+                }
+            }
+
+            // Create a new array with the selected flower at the front.
+            for(let j=0; j<8; j++) {
+                newFlwrArray.push(flowers[i]);
+                if(i>=7) {
+                    i = 0;
+                } else {
+                    i++;
+                }
+            }
+            newFlwrArray;
+            printFlowers(newFlwrArray);
+        }
+
+        /*
+        * Display the flowers.
+        */
+        function printFlowers(array) {
+            // Add the flowers
+            let flwrCount = 0;
+            let flowerDiv = document.getElementById("flowersDiv");
+            flowerDiv.innerHTML = "<table><tr id='flowers1'></tr><tr id='flowers2'></tr>";
+
+            for(let i=1; i<3; i++) {
+                let curRow = document.getElementById("flowers"+i);
+                for(let j=0; j<4; j++) {
+                    let flwData = document.createElement("td");
+                        flwData.innerHTML = `<img src="images/`+array[flwrCount].picture +
+                            `" alt="`+array[flwrCount].name +`" style="width:200px" `+
+                            `id="`+ array[flwrCount].name +`"><br>`+ array[flwrCount].name;
+                        // Add the event listener
+                        flwData.addEventListener("click",rearrange);
+                        curRow.appendChild(flwData);
+                        flwrCount++;
+                }
+            }
+        }
+
+        /*
+        * A funtion to sort flower objects by there name. Sorted
+        * alphabetically in descending order.
+        */
+        function sortAlgor(a,b) {
+            let nameA = a.name;
+                let nameB = b.name;
+
+                if (nameA < nameB) {
+                    return -1;
+                }
+                if(nameB > nameA) {
+                    return 1;
+                }
+                return 0;
+        }
     </script>
 </body>
 
