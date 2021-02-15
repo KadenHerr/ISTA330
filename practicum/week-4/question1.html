@@ -1,8 +1,13 @@
 <!DOCTYPE html>
+<!-- Author: Kaden Herr -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -51,6 +56,23 @@
              rose,
              waterlily
        ];
+
+       // Add the flowers
+       let flwrCount = 0;
+       let flowerDiv = document.getElementById("flowersDiv");
+       flowerDiv.innerHTML = "<table><tr id='flowers1'></tr><tr id='flowers2'></tr>";
+
+       for(let i=1; i<3; i++) {
+           let curRow = document.getElementById("flowers"+i);
+           for(let j=0; j<4; j++) {
+               let flwData = document.createElement("td");
+                flwData.innerHTML = `<img src="images/`+flowers[flwrCount].picture +
+                    `" alt="`+flowers[flwrCount].name +`" style="width:200px"><br>`+
+                    flowers[flwrCount].name;
+                curRow.appendChild(flwData);
+                flwrCount++;
+           }
+       }
     </script>
 </body>
 </html>
