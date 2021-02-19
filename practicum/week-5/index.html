@@ -12,36 +12,52 @@
 
 <body>
     <div>
-        In this practicum you write a simple web application in React.
-        You need to create a new repository and name is <i>imagequiz</i>. 
-        Do NOT use your ISTA330 repository for your development and 
+        In this practicum you will develop a simple responsive web application in React.
+        You need to create a new repository and name is <i>imagequiz</i>.
+        Do NOT use your ISTA330 repository for your development and
         deployment of this practicum. You need to create a separate
-        repository for this practicum. <br/> <br/>
+        repository for this practicum. <br /> <br />
+        <p>
         The web application should have the following pages:
         <ol>
             <li>A login page</li>
             <li>A home page</li>
         </ol>
-        The folder 'images' contain several images.
+        The file data.js contains several images.
         The homepage of the application should list
         all the images. For each image it should show the image and under the image
-        it should show the name of the image.
+        it should display the name of the image. Your web application should be responsive. So you should 
+        use React Bootstrap (<a href="https://react-bootstrap.github.io">https://react-bootstrap.github.io</a>) components.
         <br />
         Deploy your react application to github pages.
         If deployed successfully then your react application will be
         shown in the iframe below.
+        </p>
         <br />
-        Follow the following naming convention when you 
-        create your react application:
+        <p>
+            Follow the following instructions to set up the react application and deploy it to Github Pages:
         <ol>
-            <li>The name of your github repository for this application should be <i>imagequiz</i>.</li>
-            <li> Below this line, you find an iframe element.
-                The address that you provide for the iframe src attribute 
-                should be <b> <i>https://your-github-username.github.io/imagequiz/</i> </b>
-                where <i>your-github-username</i> is the username with which you
-                created your github account.
+            <li>On Github, create a repository and name it <i>imagequiz</i>.</li>
+            <li>Clone the repository on your local machine. Use the command: <b>git clone
+                    https://github.com/yourusername/imagequiz.git</b></li>
+
+            <li>On terminal or command prompt, change the current directory to the folder <i>imagequiz</i> created by the
+                command at step 2 and run the following command: <br /> <b>npm init react-app imagequiz</b></li>
+            <li>Install GitHub Pages package as a dev-dependency: first run the following: <b>cd imagequiz</b> and then
+                run <b>npm install gh-pages --save-dev</b></li>
+            <li>Now open the imagequiz folder in your visual studio code and locate the file package.json. Add the
+                following line to the file: <br /> <b>"homepage": "http://yourusername.github.io/imagequiz"</b></li>
+            <li>In the existing scripts property in the file package.json add the following:
+                <b>
+                   <br/> "predeploy": "npm run build",<br/>
+                    "deploy": "gh-pages -d build",  
+                </b>
             </li>
+            <li>Commit and push your changes to Github using your Visual Studio Code.
+
+            <li>Deploy your project to Github Pages by running the following command:  <br /> <b>npm run deploy</b></li>
         </ol>
+        </p>
     </div>
     <div class="iframe-container">
         <iframe id="myApplicationFrame" src="" allowfullscreen></iframe>
