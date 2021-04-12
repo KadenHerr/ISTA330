@@ -17,24 +17,28 @@
        your data from a server. You will deploy the REST API server on Heroku.
 
        <ul>
+           <li>Create a new github repository, name it "imagequiz-serverside".</li>
            <li>
-            First develop a REST API for your imagequiz web application. The API should have the following methods:
+            Develop a REST API for your imagequiz web application and push the code to your 
+            imagequiz-serverside repository. The API should have the following methods:
             <ol>
-                <li>'/quizzes' - a GET method returning the meta data about all the quizzes</li>
+                <li>'/quizzes' - a GET method returning all the quizzes</li>
                 <li>'/quiz/:id' - a GET method returning the quiz number (:id) questions</li>
                 <li>'/score' - a POST method storing the score for a quiz taken by a user</li>
             </ol>
            </li>
            <li>
             Then deploy your REST API to Heroku. You should follow the follwoing naming convention for
-             your Heroku deployment: the name of your Heroku application should be "yourgithubusername-imagequiz.herokuapp.com". 
+             your Heroku deployment: the name of your Heroku application should be "yourgithubusername-imagequiz". 
            </li>
            <li>
+            Then in your imagequiz web application, delete the files "data.js" and "flowers.js". 
             Then update your Imagequiz web application to get your data from the REST API you deployed on Heroku.
            </li>
        </ul>
 
-       For more information on how to do this practicum refer to the lectures on November 17th and November 19th.
+       For more information on how to do this practicum refer to the lectures "How to deploy a nodejs application to Heroku"
+       and "How to connect to a REST API from a REACT application".
        
        
    </div>
