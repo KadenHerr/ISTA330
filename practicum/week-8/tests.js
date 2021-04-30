@@ -6,6 +6,6 @@ window.onload = () => {
     let username = hostname.split('.')[0];
     console.log(username);
     let iframe = document.getElementById('myApplicationFrame');
-    iframe.setAttribute('src', `https://${username}-imagequiz.herokuapp.com`);
+    iframe.setAttribute('src', `https://imagequiz-serverside.herokuapp.com`);
 }
 
